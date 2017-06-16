@@ -1,0 +1,17 @@
+branch-defaults:
+  master:
+    environment: constituency-env
+    group_suffix: null
+global:
+  application_name: constituency-api
+  branch: null
+  default_ec2_keyname: stenbom-eb
+  default_platform: python2.7
+  default_region: eu-west-2
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: null
+  sc: git
+  workspace_type: Application
