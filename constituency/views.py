@@ -30,8 +30,8 @@ def vote_encrypted(request):
     if request.method == 'POST':
         vote_data = json.loads(request.body)
 
-        if all(k in vote_data for k in ('encrpyted_vote', 'pin_code', 'station_id')):
-            encrpyted_vote = vote_data['encrpyted_vote']
+        if all(k in vote_data for k in ('encrypted_vote', 'pin_code', 'station_id')):
+            encrpyted_vote = vote_data['encrypted_vote']
             pin_code = vote_data['pin_code']
             station_id = vote_data['station_id']
 
