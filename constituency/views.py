@@ -47,6 +47,24 @@ def vote_encrypted(request):
         return JsonResponse({'success': False,
                              'error': 'Missing input data'})
 
+@csrf_exempt
+def vote_script(request):
+    if request.method == 'POST':
+        print 'POST'
+        vote_data = json.loads(request.body)
+        print vote_data
+
+        if 'encrypted_vote' in vote_data:
+            encrypted_vote = vote_data['encrypted_vote']
+
+            vote_object = Vote(vote=encrypted_vote)
+            vote_object.save()
+            return JsonResponse({'success': True,
+                                 'error' : None})
+
+    return JsonResponse({'success': False,
+                         'error' : 'Missing input data'})
+
 
 def get_votes(request):
     try:
